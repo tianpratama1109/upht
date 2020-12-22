@@ -22,13 +22,8 @@ $headers[] = "X-Requested-With: XMLHttpRequest";
 $headers[] = "X-Twitter-Active-User: yes";
 $url = 'https://twitter.com/i/tweet/create';
 
-// Pengambilan Text
-function randomline( $filename )
-{
-    $lines = file( $filename );
-    return $lines[array_rand( $lines )];
-}
-$tweet = randomline('tweet.txt');
+$f_contents = file("tweet.txt"); 
+$tweet = $f_contents[rand(0, count($f_contents) - 1)];
 
 $post = 'authenticity_token='.$auth.'&batch_mode=off&is_permalink_page=false&place_id=&status='.$tweet.''.$ht.'&tagged_users=';
 
