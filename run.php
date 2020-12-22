@@ -28,7 +28,7 @@ function randomline( $filename )
     $lines = file( $filename );
     return $lines[array_rand( $lines )];
 }
-$tweet = randomline('status.txt');
+$tweet = randomline('tweet.txt');
 
 $post = 'authenticity_token='.$auth.'&batch_mode=off&is_permalink_page=false&place_id=&status='.$tweet.''.$ht.'&tagged_users=';
 
